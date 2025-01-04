@@ -1,5 +1,6 @@
 # 12_nosql-challenge
 
+# Deliverable(s)
 Deliverable 1: A Jupyter notebook containing code that imports the data and sets up and updates the uk_food database.<br> 
 [NoSQL Setup](https://github.com/wrighang/12_nosql-challenge/blob/main/NoSQL_setup.ipynb)
 
@@ -9,9 +10,9 @@ Deliverable 2: A Jupyter notebook containing code that performs the exploratory 
 # Instructions
 The UK Food Standards Agency evaluates various establishments across the United Kingdom, and gives them a food hygiene rating. You've been contracted by the editors of a food magazine, Eat Safe, Love, to evaluate some of the ratings data in order to help their journalists and food critics decide where to focus future articles.
 
-# Requirements
+## Requirements
 
-## Part 1: Database and Jupyter Notebook Set Up
+### Part 1: Database and Jupyter Notebook Set Up
 
 - Include the 'mongoimport' command text you used to import establishments.json in a markdown cell at the beginning of your Jupyter notebook file
 - The 'mongoimport' command text correctly drops any existing establishments collection before importing establishments.json into MongoDB
@@ -23,7 +24,7 @@ The UK Food Standards Agency evaluates various establishments across the United 
 - Uses 'find_one()' and 'pprint' to display one document in the 'establishments' collection
 - The 'establishments' collection is assigned to a variable
 
-##  Part 2: Update the Database
+###  Part 2: Update the Database
 
 - The supplied data for the "Penang Flavours" restaurant is correctly inserted into the 'establishments' collection
 - A query is performed to find the 'BusinessTypeID' for "Restaurant/Cafe/Canteen" and returns only the 'BusinessTypeID' and 'BusinessType' fields
@@ -32,16 +33,16 @@ The UK Food Standards Agency evaluates various establishments across the United 
 - A 'count_documents()' check is performed before and after the removal of the Dover documents to ensure the documents were removed
 - An 'update_many()' query is performed to convert the latitude and longitude fields from strings to decimal numbers and 'RatingValue' to integers
 
-##  Part 3: Exploratory Analysis
+###  Part 3: Exploratory Analysis
 
-###  Question 1: Which establishments have a hygiene score equal to 20?
+####  Question 1: Which establishments have a hygiene score equal to 20?
 > Answer: There are 41 establishments with a hygiene score of 20.
 - A query is correctly performed to find the establishments with a hygiene score of 20
 - 'count_documents()' is used to list the correct number of documents (answer: 41)
 - The first result is printed using 'pprint'
 - The results are converted to a Pandas DataFrame and displays the first 10 rows
 
-###  Question 2: Which establishments in London have a RatingValue greater than or equal to 4?
+####  Question 2: Which establishments in London have a RatingValue greater than or equal to 4?
 > Answer: There are 33 establishments with London as the Local Authoriy and a Rating Value greater than or equal to 4.
 - A query is correctly performed to find the establishments in London with a 'RatingValue' greater than or equal to 4
 - The query uses the '$regex' operator to locate the London establishments
@@ -49,7 +50,7 @@ The UK Food Standards Agency evaluates various establishments across the United 
 - The first result is printed using 'pprint'
 - The results are converted to a Pandas DataFrame and displays the first 10 rows
 
-###  Question 3: What are the top 5 establishments with a RatingValue of 5, sorted by lowest hygiene score, nearest to the new restaurant added, "Penang Flavours"?
+#### Question 3: What are the top 5 establishments with a RatingValue of 5, sorted by lowest hygiene score, nearest to the new restaurant added, "Penang Flavours"?
 > Answer: BusinessName: Howe and Co Fish and Chips - Van 17
 >> RatingValue: 5
 >> Hygiene: 0
@@ -77,7 +78,7 @@ The UK Food Standards Agency evaluates various establishments across the United 
 - All five results are printed using 'pprint'
 - The results are converted to a Pandas DataFrame and displayed
 
-### Question 4: How many establishments in each Local Authority area have a hygiene score of 0? Sort the results from highest to lowest, and print out the top ten local authority areas.
+#### Question 4: How many establishments in each Local Authority area have a hygiene score of 0? Sort the results from highest to lowest, and print out the top ten local authority areas.
 > Answer: 55 establishments
 - An aggregation pipeline is built to include a 'match' query, 'group', and 'sort'
 - The 'match' query matches documents with a hygiene score of 0
@@ -88,21 +89,18 @@ The UK Food Standards Agency evaluates various establishments across the United 
 - The first ten results are printed using 'pprint'
 - The results are converted to a Pandas DataFrame and displays the first 10 rows
 
-##  Deployment and Submission
+###  Deployment and Submission
 
 - Submit a link to a GitHub repository that’s cloned to your local machine and contains your files
 - Use the command line to add your files to the repository
 - Include appropriate commit messages in your files
 
-##  Comments
+###  Comments
 
 - Be well commented with concise, relevant notes that other developers can understand
 
-
-
-# CODING_PROCESS
-
-Overall Approach
+====================================================================
+## CODING_PROCESS
 
 - I referenced the class activity files for this module to understand syntax and code structure. These resources provided a foundation for resolving various challenges encountered during the assignment.
 
